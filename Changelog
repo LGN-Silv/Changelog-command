@@ -1,4 +1,3 @@
-
 {
   "name": "changelog",
   "permissions": "NONE",
@@ -6,7 +5,7 @@
   "_id": "ZkdMz",
   "actions": [
     {
-      "title": "Changelog for Update ${globalVars(\"changelogVersion\")}",
+      "title": "Changelog for Update ${serverVars(\"changelogVersion\")}",
       "author": "",
       "color": "ffffff",
       "timestamp": "false",
@@ -19,9 +18,20 @@
       "name": "Create Embed Message"
     },
     {
+      "storage": "2",
+      "varName": "changelogVersion",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "6",
+      "name": "Check Variable"
+    },
+    {
       "storage": "1",
       "varName": "changelog",
-      "message": "The following changes were made since the last update!\n\n${globalVars(\"changelogFeatures\")}",
+      "message": "The following changes were made since the last update!\n\n${serverVars(\"changelogFeatures\")}",
       "name": "Set Embed Description"
     },
     {
@@ -30,6 +40,17 @@
       "channel": "0",
       "varName2": "",
       "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You haven't setup changelogs yet. :x:",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
     }
   ]
 }
