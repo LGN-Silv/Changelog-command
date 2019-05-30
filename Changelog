@@ -25,7 +25,7 @@
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "2",
-      "iffalseVal": "6",
+      "iffalseVal": "7",
       "name": "Check Variable"
     },
     {
