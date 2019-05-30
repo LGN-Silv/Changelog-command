@@ -1,0 +1,264 @@
+{
+  "name": "setchangelog",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "FWpqV",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Hello, ${member}! Ready to update your changelog? Let's get started!\n--\nWhat version is this update?\n--\nNote: If you ever need to cancel at any point, just type \"Cancel\"",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content.length > 0",
+      "max": "1",
+      "time": "60000",
+      "varName2": "",
+      "storage2": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Await Response Call Action"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "4",
+      "storage": "3",
+      "varName2": "changelogVersion",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "3",
+      "varName": "changelogVersion",
+      "comparison": "1",
+      "value": "\"cancel\"",
+      "iftrue": "2",
+      "iftrueVal": "29",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "changelogVersion",
+      "comparison": "1",
+      "value": "\"Cancel\"",
+      "iftrue": "2",
+      "iftrueVal": "29",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Ok! I'll remember your version for this changelog is `${globalVars(\"changelogVersion\")}`\n--\nNow, what changes did you make since the last update?\n\n",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content.length > 0",
+      "max": "1",
+      "time": "120000",
+      "varName2": "",
+      "storage2": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Await Response Call Action"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "4",
+      "storage": "3",
+      "varName2": "changelogFeatures",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "3",
+      "varName": "changelogFeatures",
+      "comparison": "1",
+      "value": "\"cancel\"",
+      "iftrue": "2",
+      "iftrueVal": "29",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "changelogFeatures",
+      "comparison": "1",
+      "value": "\"Cancel\"",
+      "iftrue": "2",
+      "iftrueVal": "29",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Alright! The changes you made since the last update are:\n\n`${globalVars(\"changelogFeatures\")}`\n\n--\n\nHere's a copy of the new changelog, does this look correct?\n(If you reply no, then your changes won't be saved.)",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "title": "Changelog for Update ${globalVars(\"changelogVersion\")}",
+      "author": "",
+      "color": "ffffff",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "changelogSample",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "changelogSample",
+      "message": "The following changes were made since the last update!\n\n${globalVars(\"changelogFeatures\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "changelogSample",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content.length > 0",
+      "max": "1",
+      "time": "60000",
+      "varName2": "",
+      "storage2": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Await Response Call Action"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "4",
+      "storage": "1",
+      "varName2": "isSampleCorrect?",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "isSampleCorrect?",
+      "comparison": "1",
+      "value": "\"yes\"",
+      "iftrue": "2",
+      "iftrueVal": "25",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "isSampleCorrect?",
+      "comparison": "1",
+      "value": "\"yes\"",
+      "iftrue": "2",
+      "iftrueVal": "25",
+      "iffalse": "0",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "isSampleCorrect?",
+      "comparison": "1",
+      "value": "\"no\"",
+      "iftrue": "2",
+      "iftrueVal": "23",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "isSampleCorrect?",
+      "comparison": "1",
+      "value": "\"No\"",
+      "iftrue": "2",
+      "iftrueVal": "23",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "That's not a valid response! Please reply with either \"Yes\" or \"No\"!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "call": "15",
+      "name": "Jump to Action"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Sorry about that! I went ahead and discarded your changes. To restart, rerun this command!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💾 Excellent! I have saved your changes! ",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "3",
+      "varName": "changelogVersion",
+      "name": "Save Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "changelogFeatures",
+      "name": "Save Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Cancelled.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}
