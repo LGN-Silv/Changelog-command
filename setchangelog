@@ -30,12 +30,12 @@
       "channel": "0",
       "varName": "",
       "info": "4",
-      "storage": "3",
+      "storage": "2",
       "varName2": "changelogVersion",
       "name": "Store Channel Info"
     },
     {
-      "storage": "3",
+      "storage": "2",
       "varName": "changelogVersion",
       "comparison": "1",
       "value": "\"cancel\"",
@@ -46,7 +46,7 @@
       "name": "Check Variable"
     },
     {
-      "storage": "3",
+      "storage": "2",
       "varName": "changelogVersion",
       "comparison": "1",
       "value": "\"Cancel\"",
@@ -59,7 +59,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "Ok! I'll remember your version for this changelog is `${globalVars(\"changelogVersion\")}`\n--\nNow, what changes did you make since the last update?\n\n",
+      "message": "Ok! I'll remember your version for this changelog is `${serverVars(\"changelogVersion\")}`\n--\nNow, what changes did you make since the last update?\n\n",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
@@ -82,7 +82,7 @@
       "channel": "0",
       "varName": "",
       "info": "4",
-      "storage": "3",
+      "storage": "2",
       "varName2": "changelogFeatures",
       "name": "Store Channel Info"
     },
@@ -98,7 +98,7 @@
       "name": "Check Variable"
     },
     {
-      "storage": "3",
+      "storage": "2",
       "varName": "changelogFeatures",
       "comparison": "1",
       "value": "\"Cancel\"",
@@ -111,13 +111,13 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "Alright! The changes you made since the last update are:\n\n`${globalVars(\"changelogFeatures\")}`\n\n--\n\nHere's a copy of the new changelog, does this look correct?\n(If you reply no, then your changes won't be saved.)",
+      "message": "Alright! The changes you made since the last update are:\n\n`${serverVars(\"changelogFeatures\")}`\n\n--\n\nHere's a copy of the new changelog, does this look correct?\n(If you reply no, then your changes won't be saved.)",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
     },
     {
-      "title": "Changelog for Update ${globalVars(\"changelogVersion\")}",
+      "title": "Changelog for Update ${serverVars(\"changelogVersion\")}",
       "author": "",
       "color": "ffffff",
       "timestamp": "false",
@@ -132,7 +132,7 @@
     {
       "storage": "1",
       "varName": "changelogSample",
-      "message": "The following changes were made since the last update!\n\n${globalVars(\"changelogFeatures\")}",
+      "message": "The following changes were made since the last update!\n\n${serverVars(\"changelogFeatures\")}",
       "name": "Set Embed Description"
     },
     {
@@ -240,12 +240,12 @@
       "name": "Send Message"
     },
     {
-      "storage": "3",
+      "storage": "2",
       "varName": "changelogVersion",
       "name": "Save Variable"
     },
     {
-      "storage": "3",
+      "storage": "2",
       "varName": "changelogFeatures",
       "name": "Save Variable"
     },
